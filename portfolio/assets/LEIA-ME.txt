@@ -1,0 +1,3 @@
+Coloque aqui:
+- foto.jpg (sua foto de perfil)
+- curriculo.pdf (seu curriculo)
