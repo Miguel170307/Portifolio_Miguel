@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ============================================================
+       [1] TÍTULO DA ABA DO NAVEGADOR E DESCRIÇÃO (aparece no Google)
+       ============================================================ -->
+    <title>Portfólio | SEU NOME</title>
+    <meta
+      name="description"
+      content="Portfólio de SEU NOME, desenvolvedor Front-End."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Marca o <html> com "js" ANTES de pintar a página; o CSS só esconde
+       os elementos da animação se o JavaScript estiver funcionando. -->
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- Barra roxa de progresso de rolagem (controlada pelo js/script.js) -->
+    <div class="progresso" id="progresso" aria-hidden="true"></div>
+
+    <!-- ============================================================
+       CABEÇALHO
+       ============================================================ -->
+    <header class="cabecalho" id="cabecalho">
+      <button
+        class="cabecalho__btn"
+        id="btnMenu"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+      >
+        <svg
+          width="22"
+          height="22"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          aria-hidden="true"
+        >
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+
+      <a class="cabecalho__titulo" href="#inicio">Portfólio</a>
+
+      <button
+        class="cabecalho__btn"
+        id="btnTema"
+        aria-label="Alternar tema claro e escuro"
+      >
+        <span class="toggle"><span class="toggle__bolinha"></span></span>
+      </button>
+    </header>
+
+    <!-- Menu lateral (abre ao clicar nas 3 linhas) -->
+    <nav class="menu" id="menu" aria-label="Navegação principal">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#projetos">Projetos</a>
+      <a href="#habilidades">Habilidades</a>
+      <a href="#contato">Contato</a>
+    </nav>
+    <div class="menu__fundo" id="menuFundo"></div>
+
+    <main>
+      <!-- ============================================================
+         SEÇÃO 1: APRESENTAÇÃO (HERO)
+         ============================================================ -->
+      <section class="hero" id="inicio">
+        <div class="hero__texto">
+          <p class="hero__linha" data-reveal="left">Olá, eu sou o</p>
+
+          <!-- [2] >>> SEU NOME AQUI <<< -->
+          <p class="hero__nome" data-reveal="left">Miguel Teixeira :)</p>
+
+          <!-- [3] >>> SEU CARGO / TECNOLOGIAS AQUI <<< -->
+          <p class="hero__cargo" data-reveal="left">
+            Atualmente estou estudando Desenvolvimento de Software
+            Multiplataforma <br />
+            Estou com foco em Análise e Banco de Dados
+          </p>
+
+          <div class="hero__botoes" data-reveal="left">
+            <!-- [4] Coloque seu currículo em assets/curriculo.pdf -->
+            <a class="btn btn--cheio" href="/Currículo  (1).pdf" download
+              >Download Currículo</a
+            >
+            <a class="btn btn--vazado" href="#contato">Entrar em contato</a>
+          </div>
+        </div>
+
+        <!-- [5] SUA FOTO (fixa)
+             O arquivo fica em assets/foto.jpeg. Para trocar a foto,
+             substitua esse arquivo mantendo o mesmo nome. -->
+        <div class="hero__foto" data-reveal="right">
+          <div class="foto">
+            <img
+              class="foto__img"
+              src="assets/foto.jpeg"
+              alt="Foto de perfil"
+            />
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         SEÇÃO 2: SOBRE MIM
+         ============================================================ -->
+      <section class="secao" id="sobre">
+        <h2 class="secao__titulo" data-reveal="up">Sobre mim</h2>
+
+        <!-- [6] >>> SEU TEXTO "SOBRE MIM" AQUI <<< -->
+        <p class="sobre__texto" data-reveal="up">
+          Este portfólio é um espaço dedicado à apresentação da minha
+          trajetória, ideias e projetos na área de tecnologia. Aqui compartilho
+          meus conhecimentos, exploro novas possibilidades e apresento os
+          projetos que desenvolvo, transformando ideias em soluções por meio da
+          programação e da inovação.
+        </p>
+      </section>
+
+      <!-- ============================================================
+         SEÇÃO 3: PROJETOS
+         Para adicionar um projeto, copie um bloco <article class="card"> inteiro.
+         ============================================================ -->
+      <section class="secao" id="projetos">
+        <h2 class="secao__titulo" data-reveal="up">Projetos</h2>
+
+        <!-- [7] DESTAQUES -->
+        <h3 class="subtitulo" data-reveal="up">Destaques</h3>
+        <div class="grade" data-stagger>
+          <article class="card card--destaque" data-reveal="up">
+            <div class="card__capa card__capa--1">
+              <!-- Para usar imagem de capa: troque o fundo por <img src="assets/projeto1.jpg" alt=""> -->
+              <h4>Projeto Destaque 1</h4>
+              <p>//</p>
+            </div>
+            <div class="card__rodape">
+              <span>Date</span>
+              <a class="btn btn--cheio btn--pequeno" href="#">Ver mais</a>
+            </div>
+          </article>
+
+          <article class="card card--destaque" data-reveal="up">
+            <div class="card__capa card__capa--2">
+              <h4>Projeto Destaque 2</h4>
+              <p>//</p>
+            </div>
+            <div class="card__rodape">
+              <span>Date</span>
+              <a class="btn btn--cheio btn--pequeno" href="#">Ver mais</a>
+            </div>
+          </article>
+
+          <article class="card card--destaque" data-reveal="up">
+            <div class="card__capa card__capa--3">
+              <h4>Projeto Destaque 3</h4>
+              <p>//</p>
+            </div>
+            <div class="card__rodape">
+              <span>Date</span>
+              <a class="btn btn--cheio btn--pequeno" href="#">Ver mais</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- [8] TODOS OS PROJETOS -->
+        <h3 class="subtitulo" data-reveal="up">Todos os projetos</h3>
+        <div class="grade" data-stagger>
+          <article class="card" data-reveal="up">
+            <div class="card__capa card__capa--4 card__capa--baixa">
+              <h4>Projeto 1</h4>
+              <p>React</p>
+            </div>
+          </article>
+          <article class="card" data-reveal="up">
+            <div class="card__capa card__capa--5 card__capa--baixa">
+              <h4>Projeto 2</h4>
+              <p>JavaScript</p>
+            </div>
+          </article>
+          <article class="card" data-reveal="up">
+            <div class="card__capa card__capa--1 card__capa--baixa">
+              <h4>Projeto 3</h4>
+              <p>Next.js</p>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============================================================
+         SEÇÃO 4: HABILIDADES
+         Para adicionar uma: copie uma linha <li class="skill"> inteira.
+         ============================================================ -->
+      <section class="secao" id="habilidades">
+        <h2 class="secao__titulo" data-reveal="up">Habilidades</h2>
+
+        <ul class="skills" data-stagger>
+          <li class="skill" data-reveal="zoom"><span>HTML5</span><b>H5</b></li>
+          <li class="skill" data-reveal="zoom"><span>CSS3</span><b>C3</b></li>
+          <li class="skill" data-reveal="zoom">
+            <span>JavaScript</span><b>JS</b>
+          </li>
+          <li class="skill" data-reveal="zoom">
+            <span>React.js</span><b>Re</b>
+          </li>
+          <li class="skill" data-reveal="zoom">
+            <span>Node.js</span><b>No</b>
+          </li>
+          <li class="skill" data-reveal="zoom"><span>Figma</span><b>Fi</b></li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- ============================================================
+       RODAPÉ / CONTATO
+       ============================================================ -->
+
+    <footer class="rodape" id="contato">
+      <h2 data-reveal="up">Vamos conversar?</h2>
+      <!-- [9] >>> SEUS LINKS DE CONTATO AQUI <<< -->
+      <p data-reveal="up">
+        <a href="mailto:migueltfranco@hotmail.com">migueltfranco@hotmail.com</a>
+        ·
+        <a
+          href="https://www.linkedin.com/in/miguel-franco-708988295"
+          target="_blank"
+          rel="noopener"
+          >LinkedIn</a
+        >
+        ·
+        <a href="https://github.com/Miguel170307" target="_blank" rel="noopener"
+          >GitHub</a
+        >
+      </p>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
