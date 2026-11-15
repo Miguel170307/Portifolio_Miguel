@@ -197,3 +197,16 @@
     leitor.readAsDataURL(arquivo);
   });
 })();
+
+/* Detalhes do projeto em destaque. */
+(function iniciarDetalhesMR() {
+  const botao = document.getElementById('mrMore');
+  const detalhes = document.getElementById('mrDetails');
+  if (!botao || !detalhes) return;
+  botao.addEventListener('click', () => {
+    const aberto = botao.getAttribute('aria-expanded') !== 'true';
+    botao.setAttribute('aria-expanded', String(aberto));
+    detalhes.hidden = !aberto;
+    botao.textContent = aberto ? 'Ver menos' : 'Ver mais';
+  });
+})();

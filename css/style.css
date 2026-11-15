@@ -406,3 +406,12 @@ img { max-width: 100%; }
   .grade { grid-template-columns: 1fr; }
   .skills { gap: 16px; }
 }
+
+/* Projeto MR-SPORTS: mantém o tamanho original dos destaques. */
+#projetos .grade { align-items: start; }
+.projeto__botao { border: 0; cursor: pointer; font-family: inherit; }
+.projeto__detalhes { padding: 0 18px 20px; color: var(--texto-suave); font-size: 13px; line-height: 1.8; }
+.projeto__detalhes[hidden] { display: none; }
+.projeto__detalhes p { margin: 0; }
+.projeto__tecnologias { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 0; }
+.projeto__tecnologias span { padding: 4px 7px; border-radius: 4px; font-size: 11px; color: var(--cor-destaque-claro); background: color-mix(in srgb, var(--cor-destaque) 18%, var(--fundo-card)); }
