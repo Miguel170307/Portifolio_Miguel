@@ -1,0 +1,11 @@
+.hero.type-ready .hero__linha,.hero.type-ready .hero__nome,.hero.type-ready .hero__cargo,.hero.type-ready .hero__botoes,.hero.type-ready .hero__foto{opacity:0}
+.hero.type-running .hero__linha{animation:hero-soft .55s ease both}
+.hero.type-running .hero__nome{opacity:1}
+.hero.type-running .hero__nome .hero-character{opacity:0;animation:hero-letter .01s step-end var(--letter-delay) both}
+.hero.type-running .hero__cargo{animation:hero-soft .65s ease 1s both}
+.hero.type-running .hero__botoes{animation:hero-soft .65s ease 1.15s both}
+.hero.type-running .hero__foto{animation:hero-photo .8s ease .15s both}
+@keyframes hero-soft{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes hero-photo{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+@keyframes hero-letter{from{opacity:0}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.hero.type-ready .hero__linha,.hero.type-ready .hero__nome,.hero.type-ready .hero__cargo,.hero.type-ready .hero__botoes,.hero.type-ready .hero__foto,.hero .hero-character{opacity:1!important;animation:none!important;transform:none!important}}
