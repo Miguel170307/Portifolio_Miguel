@@ -434,3 +434,13 @@ img { max-width: 100%; }
 #projetos .card--destaque > .card__capa { flex: 0 0 200px; }
 #projetos .card--destaque > .card__info { min-height: 72px; }
 #projetos .card--destaque > .card__rodape { margin-top: auto; min-height: 72px; flex-wrap: wrap; }
+
+/* Zoom discreto sem alterar as dimensões da grade. */
+#projetos .card { position: relative; transform-origin: center; transition: transform .28s cubic-bezier(.2,.7,.3,1), box-shadow .28s ease; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  #projetos .card:hover, #projetos .card:focus-within { transform: translateY(-4px) scale(1.025); z-index: 2; box-shadow: 0 14px 30px rgba(0,0,0,.24); }
+}
+@media (prefers-reduced-motion: reduce) {
+  #projetos .card { transition: none; }
+  #projetos .card:hover, #projetos .card:focus-within { transform: none; }
+}
