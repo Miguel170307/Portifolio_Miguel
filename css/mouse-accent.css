@@ -1,0 +1,6 @@
+.mouse-accent{display:none}
+@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
+.mouse-accent{display:block;position:fixed;top:0;left:0;width:18px;height:18px;margin:-9px 0 0 -9px;z-index:2000;pointer-events:none;border:1px solid rgba(167,139,250,.5);border-radius:50%;opacity:0;--cursor-scale:1;transform:translate3d(-50px,-50px,0) scale(var(--cursor-scale));transition:opacity .12s,border-color .15s;contain:layout style paint}
+.mouse-accent.is-visible{opacity:1}
+.mouse-accent.is-hover{--cursor-scale:1.3;border-color:rgba(167,139,250,.8)}
+}
