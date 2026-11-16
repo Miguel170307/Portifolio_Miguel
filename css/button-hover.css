@@ -1,0 +1,10 @@
+/* Destaque discreto nos botões, mantendo o cursor nativo. */
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover, .btn:focus-visible {
+    box-shadow: 0 0 0 3px rgba(167,139,250,.1), 0 5px 20px rgba(124,58,237,.25);
+    border-color: #a78bfa;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn { transition: none; }
+}

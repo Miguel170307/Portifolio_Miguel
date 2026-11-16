@@ -1,6 +1,0 @@
-.cursor-halo{display:none}
-@media(hover:hover) and (pointer:fine) and (prefers-reduced-motion:no-preference){
-.cursor-halo{display:block;position:fixed;top:0;left:0;width:28px;height:28px;margin:-14px 0 0 -14px;z-index:2000;border:1px solid rgba(167,139,250,.48);border-radius:50%;background:rgba(124,58,237,.035);pointer-events:none;opacity:0;transform:translate3d(-100px,-100px,0);transition:opacity .18s ease,border-color .2s,background-color .2s;will-change:transform;contain:layout style paint}
-.cursor-halo.is-visible{opacity:1}
-.cursor-halo.is-link{border-color:rgba(167,139,250,.7);background:rgba(124,58,237,.065)}
-}
