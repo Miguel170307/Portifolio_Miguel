@@ -27,9 +27,9 @@ window.addEventListener('pageshow',event=>{if(event.persisted)finish()});
 function tick(now){
 if(done)return;
 const elapsed=now-started;
-const progress=loaded?Math.min(100,elapsed/42):Math.min(90,elapsed/65);
+const progress=loaded?Math.min(100,elapsed/30):Math.min(90,elapsed/65);
 fill.style.width=progress+'%';track.setAttribute('aria-valuenow',String(Math.round(progress)));
-if(loaded&&elapsed>=4200){finish();return;}
+if(loaded&&elapsed>=3000){finish();return;}
 frame=requestAnimationFrame(tick);
 }
 frame=requestAnimationFrame(tick);
