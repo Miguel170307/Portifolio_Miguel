@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Miguel & Pietra</title>
+<base href="https://miguel-e-pietra.vercel.app/"><style>*{box-sizing:border-box}body{margin:0;background:#080e1b;color:#f6e9d5;font-family:Georgia,serif}button{cursor:pointer}.hero{height:560px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 35%,#233c5c,#0b192f 58%,#050a14)}canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y}.top{position:absolute;top:18px;left:6%;right:6%;display:flex;justify-content:space-between;align-items:center;color:#d9b982;font:12px system-ui}.btn{border:1px solid #bda06c66;background:#192740cc;color:#e9d6b1;border-radius:22px;padding:9px 14px;font:12px system-ui}.center{position:absolute;top:19%;left:10px;right:10px;text-align:center;pointer-events:none}.eyebrow{font:10px system-ui;letter-spacing:3px;color:#d4b77e}h1{font-size:clamp(37px,8vw,70px);font-weight:400;margin:22px 0 12px}h1 span{color:#d5b57d}.subtitle{font-style:italic;color:#e0cdb3;font-size:14px}.line{width:96px;height:1px;background:#bda06d;margin:25px auto}.date{font:12px system-ui;letter-spacing:2px;color:#d5b67e}.place{font:11px system-ui;color:#aeb9c9;margin-top:9px}.counter{position:absolute;bottom:36px;left:12px;right:12px;text-align:center;pointer-events:none}.counter-title{font:10px system-ui;letter-spacing:2px;color:#d4b780;margin-bottom:13px}.units{display:flex;justify-content:center;gap:12px}.unit{width:92px;padding:12px 7px;border:1px solid #d2b27c4a;background:#15243bbb;border-radius:12px}.number{font-size:30px;color:#f6dcb0}.unit-label{font:10px system-ui;color:#d2b98d}.hint{font:10px system-ui;color:#9eacc0;margin-top:15px}.zoom{position:absolute;right:12px;top:50%;display:none;flex-direction:column;gap:7px}.chapters{max-width:740px;margin:auto;padding:28px 16px 34px}.chapters>.eyebrow{text-align:center}.nav{display:flex;align-items:center;justify-content:center;gap:14px;margin:20px 0}.nav h2{font-size:clamp(21px,5vw,29px);font-weight:400;min-width:185px;text-align:center;margin:0}.panel{background:#172238;border:1px solid #bda16c33;border-radius:15px;padding:16px;min-height:325px}.slide{display:none;animation:fade .4s ease}.slide.active{display:block}@keyframes fade{from{opacity:.3}to{opacity:1}}.gallery{position:relative;max-width:440px;height:245px;margin:auto;border-radius:12px;border:1px solid #d1af7655;background:radial-gradient(circle at center,#243957,#101c30);display:flex;align-items:center;justify-content:center;overflow:hidden;text-align:center}.gallery-content{transition:opacity .7s; padding:20px}.gallery-content.fade{opacity:0}.heart{font-size:38px;color:#d5b57d;margin-bottom:18px}.gallery p{font-style:italic;color:#e7d2af}.photo-nav{position:absolute;top:50%;transform:translateY(-50%);background:#07101e88;border:1px solid #d9ba8066;border-radius:50%;width:34px;height:34px;color:white}.left{left:8px}.right{right:8px}.dots{display:flex;justify-content:center;gap:8px;margin:16px 0}.dots button{border:0;border-radius:20px;width:8px;height:8px;padding:0;background:#687285}.dots button.active{width:21px;background:#dfc08b}.caption{text-align:center;font-size:13px;font-style:italic;color:#d6c5ad;margin:14px 0}.song{display:flex;align-items:center;gap:13px;text-decoration:none;color:#f5e8d5;font:13px system-ui;background:#202d43;padding:15px;border-radius:10px;margin:10px 0}.song .note{font:26px Georgia;color:#d8ba80}.song .name{flex:1}.song small{display:block;color:#aab8cb;margin-top:3px}.timeline{border-left:1px solid #c1a46f;margin:20px;padding-left:22px}.event{margin-bottom:28px}.event strong{font:12px system-ui;color:#d8ba82}.event p{font-size:16px;margin:8px 0}.letter{text-align:center;max-width:440px;margin:20px auto;font-style:italic;line-height:2;color:#e2ceb3}.foot{text-align:center;font:11px system-ui;color:#a9926d;padding:20px}.note-text{text-align:center;font:11px system-ui;color:#a9b5c8;margin-top:13px}
+
+/* Fotos do casal: preenchimento responsivo e transição suave */
+.gallery-content{width:100%;height:100%;padding:0;display:block}
+.gallery-content img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.gallery-content.fade{opacity:0}
+
+/* Enquadramento completo: respeita fotos verticais e horizontais sem cortes */
+.gallery{
+  height:clamp(300px, 64vw, 430px);
+  background:linear-gradient(135deg,#101a2c,#24364c 50%,#101a2c);
+}
+.gallery-content{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  height:100%;
+  padding:0;
+}
+.gallery-content img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  object-position:center center;
+}
+.photo-nav{z-index:2}
+@media(max-width:480px){
+  .gallery{height:clamp(310px, 100vw, 420px)}
+}
+
+/* Identificação sutil do céu na data do casal */
+.sky-context{font:clamp(12px,2.5vw,15px) Georgia,serif;letter-spacing:.045em;color:#e2c58c;margin:13px auto 5px;text-align:center}
+.sky-disclaimer{font:10px system-ui,sans-serif;letter-spacing:.035em;color:#aab7c9;opacity:.85;margin-top:8px;text-align:center}
+
+/* Céu profundo inspirado em planetários: contraste e brilho discretos */
+.hero{background:radial-gradient(ellipse at 52% 47%,#1d3146 0%,#0b182c 53%,#03060d 100%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(1,4,12,.13),transparent 32%,transparent 66%,rgba(1,4,12,.43));z-index:0}
+.hero .top,.hero .center,.hero .counter,.hero .zoom{z-index:1}
+
+/* Céu estrelado contínuo por trás de todas as seções */
+html{background:#050a14}
+body{background:transparent;isolation:isolate}
+#sky{position:fixed;inset:0;width:100vw;height:100vh;z-index:-1;touch-action:pan-y;pointer-events:auto;background:radial-gradient(ellipse at 52% 47%,#1d3146 0%,#0b182c 53%,#03060d 100%)}
+.hero{background:transparent;pointer-events:none}
+.hero::after{background:linear-gradient(180deg,rgba(1,4,12,.10),transparent 40%,rgba(1,4,12,.14));z-index:-1}
+.hero .top,.hero .zoom{pointer-events:auto}
+.chapters,.foot{position:relative;background:linear-gradient(180deg,rgba(5,10,20,.40),rgba(5,10,20,.66))}
+.chapters{border-radius:20px}
+
+/* Correção de empilhamento: canvas visível atrás do conteúdo em desktop e celular */
+body{position:relative;isolation:auto;min-height:100vh;background:transparent}
+#sky{position:fixed;z-index:0;inset:0;display:block;width:100%;height:100%;pointer-events:auto}
+.hero{position:relative;z-index:1;background:transparent;pointer-events:none}
+.hero::after{z-index:0}
+.hero .top,.hero .zoom{pointer-events:auto}
+.chapters{position:relative;z-index:1;background:linear-gradient(180deg,rgba(5,10,20,.35),rgba(5,10,20,.56));border-radius:20px}
+.panel{background:rgba(15,27,46,.76);backdrop-filter:blur(5px);-webkit-backdrop-filter:blur(5px)}
+.foot{position:relative;z-index:1;background:rgba(5,10,20,.45)}
+
+/* Fundo contínuo sem bordas de seção ou transições visíveis */
+.hero,.chapters,.foot{background:transparent!important}
+.hero::after{display:none}
+.chapters{border-radius:0;box-shadow:none}
+.foot{border:0;box-shadow:none}
+body{background:transparent}
+#sky{background:radial-gradient(ellipse at 52% 47%,#1d3146 0%,#0b182c 53%,#03060d 100%)}
+
+/* Novas interações românticas */
+.time-extra{display:flex;justify-content:center;gap:12px;margin-top:10px}.time-unit{width:92px;padding:10px 7px;border:1px solid #d2b27c4a;background:#15243bbb;border-radius:12px}.time-unit .number{font-size:24px;font-variant-numeric:tabular-nums}.number{font-variant-numeric:tabular-nums}.gallery-content img{cursor:zoom-in}.photo-lightbox[hidden]{display:none!important}.photo-lightbox{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;gap:12px;background:rgba(2,6,15,.97);padding:65px 15px 55px}.photo-lightbox img{max-width:min(82vw,1100px);max-height:calc(100dvh - 140px);object-fit:contain;border-radius:8px}.lightbox-close{position:absolute;right:20px;top:20px;color:#eed4a8;background:#192740;border:1px solid #bda06c66;border-radius:25px;padding:9px 15px}.lightbox-arrow{flex-shrink:0;background:#192740dd;border:1px solid #bda06c66;border-radius:50%;color:#eed4a8;width:40px;height:40px;font-size:28px}.lightbox-count{position:absolute;bottom:18px;color:#d9bd8a;font:12px system-ui}.letter-heading{text-align:center;font-weight:400;margin:20px auto}.envelope{display:block;position:relative;width:154px;height:98px;margin:24px auto 15px;background:#d6b78b;border:0;border-radius:3px;box-shadow:0 12px 28px #0005;perspective:400px;transition:transform .4s}.envelope:hover{transform:translateY(-3px)}.envelope-flap{position:absolute;inset:0;background:#c8a77b;clip-path:polygon(0 0,50% 57%,100% 0);transform-origin:top;transition:transform .6s;z-index:2}.envelope-heart{position:absolute;top:31px;left:0;right:0;color:#8c3f45;font-size:26px;z-index:3}.envelope.open .envelope-flap{transform:rotateX(170deg)}.envelope-hint{text-align:center;color:#a9b5c8;font:11px system-ui}.letter-reveal{max-height:0;opacity:0;overflow:hidden;transition:max-height .7s,opacity .7s}.letter-reveal.open{max-height:280px;opacity:1}.letter-signature{text-align:center;color:#c8aa79;font:12px system-ui;margin-bottom:20px}@media(max-width:480px){.unit,.time-unit{width:83px}.counter{bottom:24px}.hero{height:620px}.photo-lightbox{gap:5px;padding-left:5px;padding-right:5px}.photo-lightbox img{max-width:calc(100vw - 105px)}.lightbox-arrow{width:39px;height:39px}}
+
+/* Corrige sobreposição do contador de seis unidades com os dados do céu */
+.hero{height:auto!important;min-height:680px;display:flex;flex-direction:column;align-items:center;padding:95px 16px 42px;overflow:hidden}
+.hero .center{position:relative;top:auto;left:auto;right:auto;width:100%;max-width:760px;flex:0 0 auto}
+.hero .counter{position:relative;bottom:auto;left:auto;right:auto;margin-top:46px;width:100%;flex:0 0 auto}
+.hero .top{z-index:2}
+.hero .zoom{z-index:2}
+.hero .counter-title{margin-bottom:15px}
+.hero .units,.hero .time-extra{gap:12px}
+.hero .sky-disclaimer{margin-top:10px}
+@media(max-width:600px){.hero{min-height:660px;padding:95px 12px 36px}.hero .counter{margin-top:42px}.hero h1{margin-top:20px}.hero .units,.hero .time-extra{gap:9px}}
+
+/* Presente interativo para Pietra */
+.gift-section{position:relative;z-index:1;max-width:740px;margin:30px auto 40px;padding:35px 20px 42px;text-align:center;color:#f5e9d8}.gift-section h2{font-size:clamp(26px,6vw,36px);font-weight:400;margin:14px 0 8px}.gift-section h2 span{color:#e1bd81}.gift-subtitle{font:12px system-ui;color:#a9b6c9;margin:0}.gift-box{position:relative;display:block;width:132px;height:116px;margin:40px auto 28px;border:0;background:transparent;cursor:pointer;filter:drop-shadow(0 13px 18px #0009);transition:transform .5s}.gift-box:hover{transform:translateY(-5px)}.gift-base{position:absolute;bottom:0;left:10px;width:112px;height:86px;background:linear-gradient(135deg,#355576,#122941);border:1px solid #bfa070;border-radius:5px}.gift-ribbon-vertical{position:absolute;bottom:0;left:56px;width:20px;height:86px;background:linear-gradient(90deg,#b48a53,#f2d8a4,#b48a53)}.gift-ribbon-horizontal{position:absolute;bottom:29px;left:10px;width:112px;height:17px;background:linear-gradient(#f2d8a4,#b58b52)}.gift-lid{position:absolute;top:15px;left:0;width:132px;height:28px;border:1px solid #e0bc80;border-radius:5px;background:linear-gradient(120deg,#3e5c7a,#182f4d);transition:transform .9s,opacity .7s;z-index:3}.gift-lid:after{content:"";position:absolute;left:56px;top:0;width:20px;height:100%;background:linear-gradient(90deg,#ae824c,#f3d7a2,#b48a52)}.gift-bow{position:absolute;top:-17px;left:45px;font-size:40px;color:#e6c58f;z-index:4;transition:transform .9s,opacity .7s}.gift-box.open .gift-lid{transform:translateY(-85px) rotate(-12deg);opacity:0}.gift-box.open .gift-bow{transform:translateY(-95px);opacity:0}.gift-box.open{transform:translateY(8px)}.gift-button{background:linear-gradient(135deg,#d6b77d,#b89459);color:#14263a;border:0;border-radius:25px;padding:12px 24px;font:600 12px system-ui;cursor:pointer}.gift-button:hover{filter:brightness(1.12)}.gift-reveal{max-height:0;opacity:0;overflow:hidden;transform:translateY(18px);transition:max-height 1s,opacity 1s,transform 1s;max-width:450px;margin:auto}.gift-reveal.show{max-height:350px;opacity:1;transform:translateY(0)}.gift-divider{height:1px;background:#d1ae7540;margin:26px auto 22px;max-width:170px}.gift-chat{background:rgba(8,19,35,.88);border:1px solid #d1ac704f;border-radius:17px;padding:21px 16px;text-align:left;box-shadow:0 12px 40px #0005}.gift-chat-header{display:flex;align-items:center;gap:11px;font-family:system-ui;margin-bottom:20px}.gift-avatar{width:42px;height:42px;border-radius:50%;object-fit:cover;border:2px solid #d6b77d}.gift-chat-header strong{font-size:16px;font-weight:500;color:#f0d9b5}.gift-chat-header time{font-size:11px;color:#aab7c9;margin-left:auto}.gift-bubble{display:inline-block;max-width:100%;border-radius:18px 18px 18px 5px;background:linear-gradient(120deg,#283f59,#1b3049);padding:15px 18px;border:1px solid #c2a16b55;color:#f3eadc;font:clamp(16px,4.8vw,23px) system-ui;line-height:1.35}.gift-bubble small{font:13px system-ui;color:#bca17d;white-space:nowrap}.gift-date{font:11px system-ui;letter-spacing:2px;color:#c5a675;margin:22px 0 6px}.gift-heart{font:italic 16px Georgia;color:#e9d7b8;margin:5px 0 0}@media(prefers-reduced-motion:reduce){.gift-box,.gift-lid,.gift-bow,.gift-reveal{transition:none}}
+
+/* Entrada e humores — Miguel & Pietra */
+.mp-gate{position:fixed;inset:0;z-index:9999;background:radial-gradient(ellipse at 50% 40%,#1c3051,#080f24 68%);display:grid;place-items:center;padding:20px;overflow-y:auto}.mp-gate[hidden]{display:none!important}.mp-gate-inner{text-align:center;width:min(100%,460px);padding:42px 24px;border:1px solid #665434;border-radius:20px;background:#0b1730e8;box-shadow:0 30px 90px #0007}.mp-gate-inner h2{font:normal clamp(36px,9vw,55px) Georgia,serif;margin:22px 0 10px}.mp-gate-inner h2 span{color:#d9b878}.mp-gate-inner h3{font:normal 27px Georgia,serif;margin:18px 0}.mp-gate-inner p{color:#c4c9d5;font:14px/1.7 system-ui}.mp-gate-inner .mp-gold{color:#d9b878;letter-spacing:2px}.mp-heart{font-size:55px;color:#d9b878;margin:20px}.mp-primary{display:block;width:min(100%,320px);margin:22px auto 0;border:0;border-radius:30px;background:linear-gradient(120deg,#e5c58e,#b9955d);color:#13233a;padding:13px 18px;font:600 13px system-ui;cursor:pointer}.mp-primary:disabled{opacity:.6;cursor:wait}.mp-people{display:flex;justify-content:center;gap:14px;margin-top:22px}.mp-person{display:flex;flex-direction:column;align-items:center;gap:13px;min-width:125px;padding:22px 18px;background:#15233c;color:#f6e9d5;border:1px solid #80683e;border-radius:15px;font:16px Georgia;cursor:pointer}.mp-person span{display:grid;place-items:center;width:65px;height:65px;border-radius:50%;background:#2b2b42;color:#e8c989;font:29px Georgia}.mp-person:hover,.mp-person:focus-visible{border-color:#f1d9aa}.mp-text-button{background:transparent;border:0;color:#d9b878;font:12px system-ui;cursor:pointer;padding:13px}.mp-gate-inner #mpChoose[hidden]{display:none}.mp-gate-inner #mpGateStatus{color:#efb6a5;min-height:1.3em;font-size:12px}
+.mp-mood-section{position:relative;z-index:1;max-width:760px;margin:30px auto 60px;padding:35px 20px;text-align:center;color:#f5e9d8}.mp-mood-section h2{font:normal clamp(27px,6vw,38px) Georgia,serif;margin:16px 0}.mp-mood-section>p{color:#b5bed0;font:13px system-ui}.mp-moods{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:25px auto}.mp-mood{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:7px;min-height:87px;background:#14233b;color:#eee0cc;border:1px solid #39465b;border-radius:12px;font:11px system-ui;cursor:pointer}.mp-mood span{font-size:28px}.mp-mood[aria-pressed=true]{border-color:#e8c989;background:#332b40;box-shadow:0 0 0 1px #d9b87855}.mp-mood-section label{display:block;margin:12px 0;text-align:left;font:13px system-ui;color:#d9b878}.mp-mood-section textarea{display:block;width:100%;resize:vertical;min-height:85px;padding:14px;background:#111d33;border:1px solid #665434;border-radius:12px;color:#f6e9d5;font:14px system-ui}.mp-mood-section .mp-primary{margin:18px auto}.mp-cards{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:23px;text-align:center}.mp-cards article{border:1px solid #665434;background:#14213a;border-radius:14px;padding:22px 14px;min-width:0}.mp-cards .mp-big{font-size:43px;margin:13px}.mp-cards p{font:13px/1.5 system-ui;color:#d1d1d9;overflow-wrap:anywhere}.mp-mood-section #mpStatus{min-height:1.4em;font:12px system-ui;color:#d9b878}@media(max-width:450px){.mp-moods{grid-template-columns:repeat(3,minmax(0,1fr))}.mp-people{gap:9px}.mp-person{min-width:115px}.mp-cards{gap:8px}.mp-cards article{padding:16px 9px}}
+
+.mp-gate [hidden]{display:none!important}
+
+/* Presença discreta dentro do céu original */
+.hero .mp-online-indicator{position:absolute;z-index:3;top:10px;left:50%;transform:translateX(-50%);max-width:90%;white-space:nowrap;border:1px solid #e1c18b66;border-radius:24px;background:#0b1a30c9;backdrop-filter:blur(10px);padding:8px 14px;color:#e9d4ac;font:11px system-ui;letter-spacing:.4px;box-shadow:0 0 18px #e6bf7930;pointer-events:none;text-align:center}
+.hero.mp-together:after{content:"";position:absolute;inset:0;pointer-events:none;z-index:1;background:radial-gradient(ellipse at 50% 35%,#d7b77717,transparent 65%);animation:mpSkyPulse 4s ease-in-out infinite}
+.hero .mp-shooting-star{position:absolute;z-index:5;pointer-events:none;left:-25%;top:24%;width:160px;height:3px;transform:rotate(-19deg);transform-origin:right center;background:linear-gradient(90deg,transparent,#d8ad63 42%,#fff7df);filter:drop-shadow(0 0 7px #ffe6b3);border-radius:100%;animation:mpStarFly 2.4s ease-in forwards}
+.hero .mp-shooting-star:after{content:"";position:absolute;right:0;top:-5px;width:13px;height:13px;border-radius:50%;background:#fff7de;box-shadow:0 0 12px 5px #eac784b8,0 0 30px 10px #eac78455}
+.hero .mp-arrival-notice{position:absolute;z-index:6;top:35%;left:50%;width:max-content;max-width:88%;transform:translate(-50%,12px);padding:13px 19px;border:1px solid #e1bd8066;border-radius:30px;background:#0a1833e8;color:#ffe5b7;font:clamp(12px,3vw,15px) system-ui;text-align:center;box-shadow:0 0 35px #d6ad6644;pointer-events:none;opacity:0;animation:mpNotice 4.8s ease .65s forwards}
+@keyframes mpStarFly{0%{left:-30%;top:14%;opacity:0}12%{opacity:1}85%{opacity:1}100%{left:115%;top:56%;opacity:0}}
+@keyframes mpNotice{0%{opacity:0;transform:translate(-50%,12px)}18%,72%{opacity:1;transform:translate(-50%,0)}100%{opacity:0;transform:translate(-50%,-8px)}}
+@keyframes mpSkyPulse{0%,100%{opacity:.35}50%{opacity:1}}
+@media(max-width:600px){.hero .mp-online-indicator{top:12px;font-size:10px}.hero .mp-arrival-notice{top:38%}}
+@media(prefers-reduced-motion:reduce){.hero .mp-shooting-star{animation:none;display:none}.hero .mp-arrival-notice{animation:none;opacity:1}.hero.mp-together:after{animation:none}}
+
+/* Transições cinematográficas da entrada */
+.mp-gate{transition:opacity .7s ease,visibility .7s ease}
+.mp-gate.mp-gate-exiting{opacity:0;visibility:hidden;pointer-events:none}
+.mp-gate-inner{position:relative;overflow:hidden;min-height:370px;display:grid;place-items:center}
+.mp-gate-panel{grid-area:1/1;position:relative;width:100%;opacity:0;visibility:hidden;transform:translateY(19px) scale(.975);transition:opacity .65s ease,transform .75s cubic-bezier(.2,.7,.2,1),visibility .65s;pointer-events:none}
+.mp-gate-panel.mp-panel-active{opacity:1;visibility:visible;transform:translateY(0) scale(1);pointer-events:auto}
+.mp-gate .mp-gate-panel[hidden]{display:block!important;visibility:hidden;pointer-events:none}
+.mp-gate-inner #mpGateStatus{position:absolute;bottom:8px;left:12px;right:12px;pointer-events:none}
+.mp-primary,.mp-person{transition:transform .28s ease,box-shadow .28s ease,filter .28s ease,border-color .28s ease,background .28s ease}
+.mp-primary:hover:not(:disabled){transform:translateY(-4px) scale(1.025);box-shadow:0 8px 34px #e7c68d66;filter:brightness(1.08)}
+.mp-primary:active:not(:disabled){transform:scale(.98)}
+.mp-person:hover:not(:disabled),.mp-person:focus-visible{transform:translateY(-7px) scale(1.035);background:#20334d;box-shadow:0 12px 36px #e6bb7d33}
+.mp-heart{animation:mpHeartPulse 3s ease-in-out infinite}
+.mp-opening-spinner{width:46px;height:46px;border-radius:50%;border:2px solid #b18c5d55;border-top-color:#f2d19b;animation:mpOpeningSpin 1s linear infinite;margin:27px auto}
+.mp-gate-flash{position:absolute;inset:0;pointer-events:none;z-index:2;opacity:0;background:radial-gradient(circle,#ffedc49c 0%,#c8a87522 35%,transparent 70%)}
+.mp-gate-flash.mp-flash-active{animation:mpGateFlash 1.3s ease-out forwards}
+@keyframes mpHeartPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+@keyframes mpOpeningSpin{to{transform:rotate(360deg)}}
+@keyframes mpGateFlash{0%{opacity:0}35%{opacity:1}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.mp-gate,.mp-gate-panel,.mp-primary,.mp-person{transition-duration:.1s}.mp-heart,.mp-opening-spinner,.mp-gate-flash.mp-flash-active{animation:none}}
+ #mpGate{display:none!important}body{overflow:hidden!important}</style></head><body><section class="hero"><div class="top"><span>M ✦ P</span><button class="btn" id="lock">🔒 Céu travado</button></div><div class="center"><div class="eyebrow">ESCRITO NAS ESTRELAS</div><h1>Miguel <span>&</span> Pietra</h1><div class="line"></div><div class="date">04.11.2026</div><div class="place">Araraquara · São Paulo</div></div><div class="counter"><div class="counter-title">NOSSO TEMPO JUNTOS</div><div class="units"><div class="unit"><div class="number" id="years">00</div><div class="unit-label">ANOS</div></div><div class="unit"><div class="number" id="months">00</div><div class="unit-label">MESES</div></div><div class="unit"><div class="number" id="days">00</div><div class="unit-label">DIAS</div></div></div><div class="time-extra"><div class="time-unit"><div class="number" id="hours">00</div><div class="unit-label">HORAS</div></div><div class="time-unit"><div class="number" id="minutes">00</div><div class="unit-label">MINUTOS</div></div><div class="time-unit"><div class="number" id="seconds">00</div><div class="unit-label">SEGUNDOS</div></div></div><div class="hint" id="hint">Destrave para explorar as estrelas</div></div><div class="zoom" id="zoom"><button class="btn" id="plus">+</button><button class="btn" id="minus">−</button><button class="btn" id="reset">⌖</button></div></section></body></html>

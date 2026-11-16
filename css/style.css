@@ -415,3 +415,15 @@ img { max-width: 100%; }
 .projeto__detalhes p { margin: 0; }
 .projeto__tecnologias { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 0; }
 .projeto__tecnologias span { padding: 4px 7px; border-radius: 4px; font-size: 11px; color: var(--cor-destaque-claro); background: color-mix(in srgb, var(--cor-destaque) 18%, var(--fundo-card)); }
+
+/* Prévias visuais dos projetos: documentos estáticos, sem login ou scripts. */
+.card__preview{display:block;position:relative;height:200px;overflow:hidden;background:var(--fundo-card);isolation:isolate}
+.card__preview iframe{display:block;position:absolute;left:0;top:0;width:1200px;height:760px;border:0;transform:scale(.3);transform-origin:top left;pointer-events:none;user-select:none}
+.card__preview::after{content:"Abrir projeto ↗";position:absolute;right:12px;bottom:12px;padding:7px 12px;border-radius:18px;background:#14141fe8;color:#fff;font-size:12px;opacity:0;transform:translateY(4px);transition:opacity .2s,transform .2s}
+.card__preview:hover::after,.card__preview:focus-visible::after{opacity:1;transform:none}
+.card__preview:focus-visible{outline:3px solid var(--cor-destaque-claro);outline-offset:-3px}
+.card__info{padding:18px 18px 4px}
+.card__info h4{font-size:16px;font-weight:500;color:var(--texto);margin:0 0 6px}
+.card__info p{color:var(--texto-suave);font-size:12px;margin:0;line-height:1.6}
+@media(hover:none){.card__preview::after{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.card__preview::after{transition:none}}
