@@ -408,7 +408,7 @@ img { max-width: 100%; }
 }
 
 /* Projeto MR-SPORTS: mantém o tamanho original dos destaques. */
-#projetos .grade { align-items: start; }
+#projetos .grade { align-items: stretch; }
 .projeto__botao { border: 0; cursor: pointer; font-family: inherit; }
 .projeto__detalhes { padding: 0 18px 20px; color: var(--texto-suave); font-size: 13px; line-height: 1.8; }
 .projeto__detalhes[hidden] { display: none; }
@@ -427,3 +427,10 @@ img { max-width: 100%; }
 .card__info p{color:var(--texto-suave);font-size:12px;margin:0;line-height:1.6}
 @media(hover:none){.card__preview::after{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){.card__preview::after{transition:none}}
+
+/* Alturas iguais por linha, com os botões alinhados na base. */
+#projetos .card--destaque { display: flex; flex-direction: column; min-height: 344px; }
+#projetos .card--destaque > .card__preview,
+#projetos .card--destaque > .card__capa { flex: 0 0 200px; }
+#projetos .card--destaque > .card__info { min-height: 72px; }
+#projetos .card--destaque > .card__rodape { margin-top: auto; min-height: 72px; flex-wrap: wrap; }
